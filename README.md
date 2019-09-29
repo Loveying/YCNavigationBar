@@ -1,0 +1,2 @@
+# YCNavigationBar
+基于系统UINavigationController，实现类似微信不同样式导航栏切换的平滑过渡。
