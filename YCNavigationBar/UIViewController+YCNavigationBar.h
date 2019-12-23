@@ -31,6 +31,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) UIColor *yc_computedBarTintColor;
 @property (nonatomic, strong, readonly) UIImage *yc_computedBarImage;
 
+
+// 这个属性是内部使用的
+@property (nonatomic, strong) UIBarButtonItem *yc_backBarButtonItem;
+@property (nonatomic, assign) BOOL yc_extendedLayoutDidSet;
+
 - (void)yc_setNeedsUpdateNavigationBar;
 
 @end

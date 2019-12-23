@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) UIImageView *shadowImageView;
 @property (nonatomic, strong, readonly) UIVisualEffectView *fakeView;
 @property (nonatomic, strong, readonly) UIImageView *backgroundImageView;
+@property (nonatomic, strong, readonly) UILabel *backButtonLabel;
 
 @end
 

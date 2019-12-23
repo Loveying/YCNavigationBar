@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "YCNavigationBar"
-  spec.version      = "1.0.0"
+  spec.version      = "1.1.0"
   spec.summary      = "基于系统UINavigationController，实现类似微信不同样式导航栏切换的平滑过渡。"
 
   # This description is used to generate tags and improve search results.

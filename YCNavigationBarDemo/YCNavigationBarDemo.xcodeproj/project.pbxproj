@@ -16,6 +16,9 @@
 		42BD2302233C413600A1BBF5 /* TestGradientDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD22FD233C413600A1BBF5 /* TestGradientDemoViewController.m */; };
 		42BD2303233C413600A1BBF5 /* lakeside_sunset.png in Resources */ = {isa = PBXBuildFile; fileRef = 42BD22FE233C413600A1BBF5 /* lakeside_sunset.png */; };
 		42BD2304233C413600A1BBF5 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD2301233C413600A1BBF5 /* TestViewController.m */; };
+		42CFAEF02341F4B6007A1395 /* YCPopAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CFAEEF2341F4B6007A1395 /* YCPopAnimation.m */; };
+		42CFAEF32341F4CA007A1395 /* YCPushAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CFAEF22341F4CA007A1395 /* YCPushAnimation.m */; };
+		42CFAEF62341F552007A1395 /* FSPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CFAEF52341F552007A1395 /* FSPNavigationController.m */; };
 		826E3A3AA1E359165BF01172 /* libPods-YCNavigationBarDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E517F52A86C560793F95D748 /* libPods-YCNavigationBarDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +57,12 @@
 		42BD22FF233C413600A1BBF5 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		42BD2300233C413600A1BBF5 /* TestGradientDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestGradientDemoViewController.h; sourceTree = "<group>"; };
 		42BD2301233C413600A1BBF5 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		42CFAEEE2341F4B6007A1395 /* YCPopAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YCPopAnimation.h; sourceTree = "<group>"; };
+		42CFAEEF2341F4B6007A1395 /* YCPopAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YCPopAnimation.m; sourceTree = "<group>"; };
+		42CFAEF12341F4CA007A1395 /* YCPushAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YCPushAnimation.h; sourceTree = "<group>"; };
+		42CFAEF22341F4CA007A1395 /* YCPushAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YCPushAnimation.m; sourceTree = "<group>"; };
+		42CFAEF42341F552007A1395 /* FSPNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSPNavigationController.h; sourceTree = "<group>"; };
+		42CFAEF52341F552007A1395 /* FSPNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSPNavigationController.m; sourceTree = "<group>"; };
 		657BA1BD6203A29F0D13AA26 /* Pods-YCNavigationBarDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YCNavigationBarDemo.release.xcconfig"; path = "Target Support Files/Pods-YCNavigationBarDemo/Pods-YCNavigationBarDemo.release.xcconfig"; sourceTree = "<group>"; };
 		95DBDD6C9D3E9EFFD9D2BF35 /* Pods-YCNavigationBarDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YCNavigationBarDemo.debug.xcconfig"; path = "Target Support Files/Pods-YCNavigationBarDemo/Pods-YCNavigationBarDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		E517F52A86C560793F95D748 /* libPods-YCNavigationBarDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YCNavigationBarDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +117,7 @@
 		42BD22BD233C3C5900A1BBF5 /* YCNavigationBarDemo */ = {
 			isa = PBXGroup;
 			children = (
+				42CFAEED2341F493007A1395 /* NavAnimations */,
 				42BD22BE233C3C5900A1BBF5 /* AppDelegate.h */,
 				42BD22BF233C3C5900A1BBF5 /* AppDelegate.m */,
 				42BD22C4233C3C5900A1BBF5 /* ViewController.h */,
@@ -124,6 +134,19 @@
 				42BD22D0233C3C5A00A1BBF5 /* main.m */,
 			);
 			path = YCNavigationBarDemo;
+			sourceTree = "<group>";
+		};
+		42CFAEED2341F493007A1395 /* NavAnimations */ = {
+			isa = PBXGroup;
+			children = (
+				42CFAEEE2341F4B6007A1395 /* YCPopAnimation.h */,
+				42CFAEEF2341F4B6007A1395 /* YCPopAnimation.m */,
+				42CFAEF12341F4CA007A1395 /* YCPushAnimation.h */,
+				42CFAEF22341F4CA007A1395 /* YCPushAnimation.m */,
+				42CFAEF42341F552007A1395 /* FSPNavigationController.h */,
+				42CFAEF52341F552007A1395 /* FSPNavigationController.m */,
+			);
+			path = NavAnimations;
 			sourceTree = "<group>";
 		};
 		5B36260CFF928AED2A2B4619 /* Pods */ = {
@@ -300,10 +323,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42CFAEF02341F4B6007A1395 /* YCPopAnimation.m in Sources */,
+				42CFAEF62341F552007A1395 /* FSPNavigationController.m in Sources */,
 				42BD22C6233C3C5900A1BBF5 /* ViewController.m in Sources */,
 				42BD2302233C413600A1BBF5 /* TestGradientDemoViewController.m in Sources */,
 				42BD22C0233C3C5900A1BBF5 /* AppDelegate.m in Sources */,
 				42BD22D1233C3C5A00A1BBF5 /* main.m in Sources */,
+				42CFAEF32341F4CA007A1395 /* YCPushAnimation.m in Sources */,
 				42BD2304233C413600A1BBF5 /* TestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

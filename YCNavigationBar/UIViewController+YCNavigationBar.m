@@ -61,11 +61,51 @@
 
 - (NSDictionary *)yc_titleTextAttributes {
     id obj = objc_getAssociatedObject(self, _cmd);
-    return obj ?: [UINavigationBar appearance].titleTextAttributes;
+    if (obj) {
+        return obj;
+    }
+    
+    UIBarStyle barStyle = self.yc_barStyle;
+    NSDictionary *attributes = [UINavigationBar appearance].titleTextAttributes;
+    if (attributes) {
+        if (![attributes objectForKey:NSForegroundColorAttributeName]) {
+            NSMutableDictionary *mutableAttributes = [attributes mutableCopy];
+            if (barStyle == UIBarStyleBlack) {
+                [mutableAttributes addEntriesFromDictionary:@{ NSForegroundColorAttributeName: UIColor.whiteColor }];
+            } else {
+                [mutableAttributes addEntriesFromDictionary:@{ NSForegroundColorAttributeName: UIColor.blackColor }];
+            }
+            return mutableAttributes;
+        }
+        return attributes;
+    }
+
+    if (barStyle == UIBarStyleBlack) {
+        return @{ NSForegroundColorAttributeName: UIColor.whiteColor };
+    } else {
+        return @{ NSForegroundColorAttributeName: UIColor.blackColor };
+    }
 }
 
 - (void)setYc_titleTextAttributes:(NSDictionary *)attributes {
     objc_setAssociatedObject(self, @selector(yc_titleTextAttributes), attributes, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (UIBarButtonItem *)yc_backBarButtonItem {
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+- (void)setYc_backBarButtonItem:(UIBarButtonItem *)backBarButtonItem {
+    objc_setAssociatedObject(self, @selector(yc_backBarButtonItem), backBarButtonItem, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (BOOL)yc_extendedLayoutDidSet {
+    id obj = objc_getAssociatedObject(self, _cmd);
+    return obj ? [obj boolValue] : NO;
+}
+
+- (void)setYc_extendedLayoutDidSet:(BOOL)didSet {
+    objc_setAssociatedObject(self, @selector(yc_extendedLayoutDidSet), @(didSet), OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 - (float)yc_barAlpha {

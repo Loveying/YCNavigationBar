@@ -20,4 +20,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@protocol YCNavigationTransitionProtocol <NSObject>
+
+- (void)handleNavigationTransition:(UIScreenEdgePanGestureRecognizer *)pan;
+
+@end
+
 NS_ASSUME_NONNULL_END

@@ -10,9 +10,10 @@
 
 @interface YCNavigationBar()
 
-@property (nonatomic, strong, readwrite) UIImageView *shadowImageView;
-@property (nonatomic, strong, readwrite) UIVisualEffectView *fakeView;
-@property (nonatomic, strong, readwrite) UIImageView *backgroundImageView;
+@property (nonatomic, strong) UIImageView *shadowImageView;
+@property (nonatomic, strong) UIVisualEffectView *fakeView;
+@property (nonatomic, strong) UIImageView *backgroundImageView;
+@property (nonatomic, strong) UILabel *backButtonLabel;
 
 @end
 
@@ -94,6 +95,21 @@
         [[self.subviews firstObject] insertSubview:_backgroundImageView aboveSubview:self.fakeView];
     }
     return _backgroundImageView;
+}
+
+- (UILabel *)backButtonLabel
+{
+    if (@available(iOS 11, *)) ; else return nil;
+    UIView *navigationBarContentView = [self valueForKeyPath:@"visualProvider.contentView"];
+    __block UILabel *backButtonLabel = nil;
+    [navigationBarContentView.subviews enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(__kindof UIView * _Nonnull subview, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([subview isKindOfClass:NSClassFromString(@"_UIButtonBarButton")]) {
+            UIButton *titleButton = [subview valueForKeyPath:@"visualProvider.titleButton"];
+            backButtonLabel = titleButton.titleLabel;
+            *stop = YES;
+        }
+    }];
+    return backButtonLabel;
 }
 
 - (void)setBackgroundImage:(UIImage *)backgroundImage forBarMetrics:(UIBarMetrics)barMetrics {
