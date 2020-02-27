@@ -13,7 +13,6 @@
 @property (nonatomic, strong) UIImageView *shadowImageView;
 @property (nonatomic, strong) UIVisualEffectView *fakeView;
 @property (nonatomic, strong) UIImageView *backgroundImageView;
-@property (nonatomic, strong) UILabel *backButtonLabel;
 
 @end
 
@@ -27,7 +26,7 @@
     UIView *view = [super hitTest:point withEvent:event];
     NSString *viewName = [[[view classForCoder] description] stringByReplacingOccurrencesOfString:@"_" withString:@""];
     
-    if (view && [viewName isEqualToString:@"YCNavigationBar"]) {
+    if ([view isKindOfClass:[self class]]) {
         for (UIView *subview in self.subviews) {
             NSString *viewName = [[[subview classForCoder] description] stringByReplacingOccurrencesOfString:@"_" withString:@""];
             NSArray *array = @[ @"UINavigationItemButtonView" ];

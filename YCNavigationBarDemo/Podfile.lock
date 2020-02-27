@@ -1,5 +1,5 @@
 PODS:
-  - YCNavigationBar (1.0.0)
+  - YCNavigationBar (1.1.0)
 
 DEPENDENCIES:
   - YCNavigationBar (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  YCNavigationBar: 5d83ed4229a6ac5b6b98356c39246bdf1d95af0a
+  YCNavigationBar: 2d996fbeb2c22cc4741e216321f8e2aa9efbcf3c
 
 PODFILE CHECKSUM: 0cdbd0108caba47257412c7997ef371d15ef9096
 
-COCOAPODS: 1.8.0
+COCOAPODS: 1.8.4

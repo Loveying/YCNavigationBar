@@ -18,18 +18,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor lightGrayColor];
     self.navigationItem.title = @"TestVC";
 }
 
-- (BOOL)yc_backInteractive {
-    [self showAlertWithBlock:^(NSInteger index) {
-        if (index == 1) {
-            [self.navigationController popViewControllerAnimated:YES];
-        }
-    }];
-    return NO;
-}
+//- (BOOL)yc_backInteractive {
+//    [self showAlertWithBlock:^(NSInteger index) {
+//        if (index == 1) {
+//            [self.navigationController popViewControllerAnimated:YES];
+//        }
+//    }];
+//    return NO;
+//}
 
 - (void)showAlertWithBlock:(void(^)(NSInteger index))block {
     UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"操作尚未完后，是否返回？" message:nil preferredStyle:UIAlertControllerStyleAlert];
